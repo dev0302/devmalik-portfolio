@@ -1,17 +1,11 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ArrowUpRight } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 import { Project } from "@/data/projects";
 
@@ -25,46 +19,26 @@ export const ProjectCard = ({
   status
 }: Project) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-
   const isBuilding = status === "Building";
-
-  useGSAP(() => {
-    gsap.fromTo(cardRef.current,
-      { opacity: 0, y: 50, scale: 0.95 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1, 
-        duration: 0.8, 
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  }, { scope: cardRef });
 
   return (
     <div
-      ref={cardRef}
-      className="group relative flex flex-col rounded-[32px] border border-white/[0.05] bg-gradient-to-br from-indigo-900/20 via-[#111116]/90 to-[#0a0a0c]/90 backdrop-blur-3xl p-3 sm:p-4 transition-all duration-700 ease-out hover:from-indigo-800/20 hover:via-[#16161d]/90 hover:border-white/[0.1] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)]"
+      className="group relative flex flex-col rounded-[32px] border border-white/[0.05] bg-gradient-to-br from-indigo-900/20 via-[#111116]/90 to-[#0a0a0c]/90 backdrop-blur-md p-3 sm:p-4 transition-all duration-500 ease-out hover:from-indigo-800/20 hover:via-[#16161d]/90 hover:border-white/[0.1] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)] transform-gpu"
     >
       {/* Background glow isolation */}
-      <div className="pointer-events-none absolute inset-0 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+      <div className="pointer-events-none absolute inset-0 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background: "radial-gradient(800px circle at 50% -20%, rgba(255,255,255,0.03), transparent 60%)"
         }}
       />
 
       {/* Sleek MacOS-style Image Container */}
-      <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[24px] bg-black border border-white/[0.04] shadow-inner mb-5">
+      <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[24px] bg-black border border-white/[0.04] shadow-inner mb-5 transform-gpu">
         <Image
           src={image || '/assets/images/image.png'}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
+          quality={85}
           alt={title}
           className="object-cover opacity-80 transition-all duration-1000 ease-[0.19,1,0.22,1] group-hover:scale-105 group-hover:opacity-100"
         />
