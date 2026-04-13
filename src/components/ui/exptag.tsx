@@ -24,7 +24,7 @@ export const Exptag = ({
 }: ExperienceCardProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLSpanElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
   
   const techList = technologies ? technologies.split("/").map((t) => t.trim()) : [];
 
