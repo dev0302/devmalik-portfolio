@@ -1,0 +1,9 @@
+src/app/globals.css
+src/app/layout.tsx
+src/components/sections/Contributions.tsx
+src/components/sections/Hero.tsx
+src/components/sections/Projects.tsx
+src/components/sections/Stack.tsx
+src/components/ui/Batch.tsx
+src/components/ui/ProjectCard.tsx
+src/components/ui/statusLine.tsx

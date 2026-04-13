@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sofia-pro');
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+  }
+
+
+
+  body {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: normal;
+  }
+  
+  h1 {
+    font-family: "Instrument Serif", serif;
+    font-size: 2.25rem;
+    line-height: 1.11111;
+    letter-spacing: -0.025em;
+  }
+  
+  h2 {
+    font-family: "Instrument Serif", serif;
+    font-size: 1.5rem;
+    line-height: 1.33333;
+    letter-spacing: -0.025em;
+  }
+  
+  h3, h4, h5, h6 {
+    font-family: "Instrument Serif", serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+.inter-tight {
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.nunito {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.sofia-pro {
+  font-family: 'Sofia Pro', sans-serif;
+  font-weight: 600;
+}
+
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 100;
+}
+
+.font-pixel-grid {
+  font-family: var(--font-geist-pixel-grid);
+}
+
+.font-pixel-square {
+  font-family: var(--font-geist-pixel-square);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+  
+  .animate-marquee-reverse {
+    animation: marquee 25s linear infinite reverse;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
