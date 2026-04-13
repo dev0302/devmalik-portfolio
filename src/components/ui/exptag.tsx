@@ -32,18 +32,19 @@ export const Exptag = ({
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 85%",
-        toggleActions: "play none none reverse",
+        start: "top 95%",
+        once: true,
+        toggleActions: "play none none none",
       }
     });
 
     tl.fromTo(dotRef.current, 
       { scale: 0, opacity: 0, autoAlpha: 0 }, 
-      { scale: 1, opacity: 1, autoAlpha: 1, duration: 0.6, ease: "back.out(2)" }
+      { scale: 1, opacity: 1, autoAlpha: 1, duration: 0.25, ease: "power2.out" }
     ).fromTo(cardRef.current, 
-      { y: 50, opacity: 0, rotationX: 5 }, 
-      { y: 0, opacity: 1, rotationX: 0, duration: 0.8, ease: "power3.out" },
-      "-=0.4"
+      { y: 20, opacity: 0, rotationX: 2 }, 
+      { y: 0, opacity: 1, rotationX: 0, duration: 0.35, ease: "power2.out" },
+      "-=0.15"
     );
   }, { scope: containerRef });
 
