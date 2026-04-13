@@ -9,6 +9,10 @@ import { ArrowUpRight } from "lucide-react";
 
 import { Project } from "@/data/projects";
 
+type ProjectCardProps = Project & {
+  eagerImage?: boolean;
+};
+
 export const ProjectCard = ({
   title,
   description,
@@ -16,8 +20,9 @@ export const ProjectCard = ({
   githubUrl,
   tech = [],
   image,
-  status
-}: Project) => {
+  status,
+  eagerImage = false,
+}: ProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const isBuilding = status === "Building";
 
@@ -39,6 +44,8 @@ export const ProjectCard = ({
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           quality={85}
+          loading={eagerImage ? "eager" : "lazy"}
+          priority={eagerImage}
           alt={title}
           className="object-cover opacity-80 transition-all duration-1000 ease-[0.19,1,0.22,1] group-hover:scale-105 group-hover:opacity-100"
         />

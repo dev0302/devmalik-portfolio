@@ -15,6 +15,7 @@ export const Projects = () => {
                 {featuredProjects.slice(0, 4).map((project, index) => (
                     <ProjectCard
                         key={index}
+                        eagerImage
                         {...project}
                     />
                 ))}
