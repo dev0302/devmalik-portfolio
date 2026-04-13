@@ -36,7 +36,7 @@ const commands: CommandGroup[] = [
   { group: 'Connect', items: [
     { title: 'X (Twitter)', icon: Sparkles, href: 'https://x.com/devmalik_0302', external: true, shortcut: 'X' },
     { title: 'Contact Me', icon: Send, href: 'mailto:devmalik9953@gmail.com', external: true, shortcut: 'C' },
-    { title: 'Download Resume', icon: FileText, href: '/resume.pdf', external: true, shortcut: 'R' },
+    { title: 'Download Resume', icon: FileText, href: '/resume', shortcut: 'R' },
   ]},
   { group: 'Settings', items: [
     { title: 'Toggle Theme', icon: Sun, href: '#', shortcut: 'T' },
