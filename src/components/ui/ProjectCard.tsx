@@ -24,6 +24,7 @@ export const ProjectCard = ({
   eagerImage = false,
 }: ProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const isBuilding = status === "Building";
 
   return (
@@ -39,15 +40,21 @@ export const ProjectCard = ({
 
       {/* Sleek MacOS-style Image Container */}
       <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[24px] bg-black border border-white/[0.04] shadow-inner mb-5 transform-gpu">
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-[#151522] via-[#0f1016] to-[#0a0a0c] animate-pulse" />
+        )}
         <Image
           src={image || '/assets/images/image.png'}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          quality={85}
+          quality={eagerImage ? 72 : 85}
           loading={eagerImage ? "eager" : "lazy"}
           priority={eagerImage}
+          onLoad={() => setImageLoaded(true)}
           alt={title}
-          className="object-cover opacity-80 transition-all duration-1000 ease-[0.19,1,0.22,1] group-hover:scale-105 group-hover:opacity-100"
+          className={`object-cover transition-all duration-700 ease-[0.19,1,0.22,1] group-hover:scale-105 ${
+            imageLoaded ? "opacity-80 group-hover:opacity-100" : "opacity-0"
+          }`}
         />
         
         {/* Soft glass rim overlay */}
