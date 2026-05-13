@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 
+export const dynamic = 'force-static';
 export const UmamiCounter = () => {
   const [count, setCount] = useState<number | null>(null);
 
