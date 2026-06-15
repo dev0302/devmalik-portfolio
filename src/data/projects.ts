@@ -55,6 +55,15 @@ const allProjectsData: Project[] = [
     status: "Live",
   },
   {
+    title: "Next.js Messaging Platform",
+    description: "A professional-grade full-stack messaging platform built with Next.js, TypeScript, MongoDB, and NextAuth. Features a polished dark interface, authentication-focused architecture, anonymous messaging workflows, OTP verification, AI-powered suggestions, and dashboard-ready product sections.",
+    tech: ["Next.js", "TypeScript", "MongoDB", "NextAuth", "TailwindCSS", "Zod", "Resend", "AI"],
+    liveUrl: "https://nextjs-project-1-one.vercel.app",
+    githubUrl: "https://github.com/dev0302/nextjs-project-1",
+    image: "/assets/images/nextjs_project.png",
+    status: "Live",
+  },
+  {
     title: "Realtime Chat Application (WebSockets)",
     description: "A full-featured real-time, room-based chat application focusing on network resilience and clean architecture. Features online presence, typing indicators, auto-reconnect handling, and in-memory state management for high performance.",
     tech: ["React", "TypeScript", "WebSockets", "Node.js", "GSAP", "Vite"],
@@ -80,7 +89,8 @@ export const featuredProjects = [
   allProjectsData[3],
   allProjectsData[4],
   allProjectsData[5],
-  allProjectsData[6]
+  allProjectsData[6],
+  allProjectsData[7]
 ];
 
 export const allProjects = allProjectsData;
